@@ -1,0 +1,39 @@
+= README
+
+== keyword-scanner
+
+=== Keyword scanner/replacer for tweets
+
+Spring Boot-based application that allows you to search for tweets containing a specified keyword and if you choose, to replace that keyword with another word. For entertainment & educational purposes only. :)
+
+=== How do I start?
+
+This is a Maven-based project, so `git clone` it, load it in your favorite IDE (or just `cd` into its project directory on your machine), & `mvn package`. You will need to define the following env vars to make the application run:
+
+* TWITTER_KEY (Consumer Key (API Key))
+* TWITTER_SECRET (Consumer Secret (API Secret))
+* TWITTER_TOKEN (Access Token)
+* TWITTER_TOKEN_SECRET (Access Token Secret)
+
+NOTE: Visit https://apps.twitter.com/ to configure your app and obtain the values shown above, then create environment variables with the values Twitter provides you. *Please do not embed these values in your application*, unless you would like to share them with the world the moment you push your updates back to Github. :O
+
+=== Running the application
+
+Once you've built the app, you can run it with no parameters (in which case the default search term of "cryptography" is used):
+```
+java -jar <your_target_fat_jar_here>.jar
+```
+You can also (optionally) provide a keyword for which to search:
+```
+java -jar <your_target_fat_jar_here>.jar --keyword=<insert_your_keyword_here>
+```
+If you provide a keyword for which to search, you can also opt to provide a word with which to replace the keyword: 
+```
+java -jar <your_target_fat_jar_here>.jar --keyword=<insert_your_keyword_here> --replace=<insert_your_replacement_word_here>
+```
+
+=== Developer
+
+* Mark Heckler
+* [@MkHeck](https://twitter.com/MkHeck)
+* mark.heckler@gmail.com
