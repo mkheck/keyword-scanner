@@ -35,5 +35,5 @@ java -jar <your_target_fat_jar_here>.jar --keyword=<insert_your_keyword_here> --
 === Developer
 
 * Mark Heckler
-* [@MkHeck](https://twitter.com/MkHeck)
+* https://twitter.com/MkHeck[@MkHeck]
 * mark.heckler@gmail.com
