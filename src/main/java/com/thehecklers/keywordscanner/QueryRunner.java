@@ -7,14 +7,14 @@ import twitter4j.*;
 
 import java.util.List;
 
-@Component
+//@Component
 public class QueryRunner implements ApplicationRunner {
     private final String CLI_PARAMETER_NAME = "keyword";
     private final String CLI_REPLACE_WITH = "replace";
-    private Twitter twitter;
+    private final Twitter twitter;
 
-    public QueryRunner(TweetController controller) {
-        this.twitter = controller.getTwitter();
+    public QueryRunner(TwitterTemplate template) {
+        this.twitter = template.getTwitter();
     }
 
     @Override
@@ -35,9 +35,9 @@ public class QueryRunner implements ApplicationRunner {
             if (args.getOptionNames().contains(CLI_REPLACE_WITH)) {
                 String replaceWith = args.getOptionValues(CLI_REPLACE_WITH).get(0);
                 tweets.stream()
-                        .forEach(tweet -> System.out.println(tweet.getText().replaceAll("(?i)"+keyword, replaceWith)));
+                        .forEach(tweet -> System.out.println(tweet.toString().replaceAll("(?i)"+keyword, replaceWith)));
             } else {
-                tweets.stream().forEach(tweet -> System.out.println(tweet.getText()));
+                tweets.stream().forEach(tweet -> System.out.println(tweet.toString()));
             }
         } catch (TwitterException e) {
             e.printStackTrace();

@@ -9,12 +9,12 @@ import twitter4j.auth.AccessToken;
 import javax.annotation.PostConstruct;
 
 @Component
-public class TweetController {
+public class TwitterTemplate {
     private Twitter twitter;
 
     private final String consumerKey, consumerSecret, accessToken, accessTokenSecret;
 
-    public TweetController(@Value("${twitter.key:''}") final String consumerKey,
+    public TwitterTemplate(@Value("${twitter.key:''}") final String consumerKey,
                            @Value("${twitter.secret:''}") final String consumerSecret,
                            @Value("${twitter.token:''}") final String accessToken,
                            @Value("${twitter.token.secret:''}") final String accessTokenSecret) {

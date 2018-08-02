@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>KeyScan</title>
+</head>
+<body>
+    <h1>Twitter Keyword Scanner</h1>
+    <h4>@mkheck, mark.heckler@gmail.com</h4>
+    <br>
+    <form action="#" th:action="@{/search}" method="post">
+        <label>Keyword: </label>
+        <input type="text" name="keyword">
+
+        <label>Replace with: </label>
+        <input type="text" name="replace">
+
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <td>Text</td>
+            <td>URI</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="tweet: ${Tweets}">
+                <td th:text="${tweet.text}"></td>
+                <td th:text="${tweet.uri}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
