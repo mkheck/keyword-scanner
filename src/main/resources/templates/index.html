@@ -23,20 +23,27 @@
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Twitter Keyword Scanner</h1>
-        <br>
-        <h4>@mkheck, mark.heckler@gmail.com</h4>
-        <br>
+        <div class="page-header">
+            <h1>Twitter Keyword Scanner</h1>
+            <h4>@mkheck, mark.heckler@gmail.com</h4>
+        </div>
     </div>
     <form action="#" th:action="@{/search}" method="post">
         <div class="container-fluid">
-            <label>Keyword: </label>
-            <input type="text" name="keyword">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Keyword: </label>
+                    <input type="text" name="keyword">
+                </div>
+                <div class="col-sm-6">
+                    <label>Replace with: </label>
+                    <input type="text" name="replace">
 
-            <label>Replace with: </label>
-            <input type="text" name="replace">
-
-            <input type="submit" value="Submit">
+                    <button type="submit" value="Submit" class="btn btn-default btn-md">
+                        <span class="glyphicon glyphicon-search"></span> Submit
+                    </button>
+                </div>
+            </div>
         </div>
     </form>
     <br>
