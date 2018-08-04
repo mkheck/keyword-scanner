@@ -2,44 +2,59 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen" />
+          rel="stylesheet" media="screen" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}">
 
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+    <!--<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.3/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.3/jquery.min.js}"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.3/jquery.min.js}"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"
+            th:href="@{/webjars/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
 
     <link href="../static/css/thehecklers.css"
           th:href="@{css/thehecklers.css}" rel="stylesheet" media="screen"/>
     <title>KeyScan</title>
 </head>
 <body>
-    <h1>Twitter Keyword Scanner</h1>
-    <h4>@mkheck, mark.heckler@gmail.com</h4>
-    <br>
+    <div class="container-fluid">
+        <h1>Twitter Keyword Scanner</h1>
+        <br>
+        <h4>@mkheck, mark.heckler@gmail.com</h4>
+        <br>
+    </div>
     <form action="#" th:action="@{/search}" method="post">
-        <label>Keyword: </label>
-        <input type="text" name="keyword">
+        <div class="container-fluid">
+            <label>Keyword: </label>
+            <input type="text" name="keyword">
 
-        <label>Replace with: </label>
-        <input type="text" name="replace">
+            <label>Replace with: </label>
+            <input type="text" name="replace">
 
-        <input type="submit" value="Submit">
+            <input type="submit" value="Submit">
+        </div>
     </form>
     <br>
-    <table>
-        <thead>
-        <tr>
-            <td>Text</td>
-            <td>URI</td>
-        </tr>
-        </thead>
-        <tbody>
-            <tr th:each="tweet: ${Tweets}">
-                <td th:text="${tweet.text}"></td>
-                <td th:text="${tweet.uri}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container-fluid">
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Text</th>
+                    <th>URI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tweet: ${Tweets}">
+                    <td th:text="${tweet.text}"></td>
+                    <td th:text="${tweet.uri}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
