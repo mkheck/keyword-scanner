@@ -17,15 +17,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"
             th:href="@{/webjars/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
 
-    <link href="../static/css/thehecklers.css"
+    <!--<link href="../static/css/thehecklers.css"-->
+    <link href="css/thehecklers.css"
           th:href="@{css/thehecklers.css}" rel="stylesheet" media="screen"/>
     <title>KeyScan</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="page-header">
-            <h1>Twitter Keyword Scanner</h1>
-            <h4>@mkheck, mark.heckler@gmail.com</h4>
+            <div class="media-left media-bottom">
+                <img src="images/twitter-png-5969.png" class="media-object" style="width:80px"/>
+            </div>
+            <div class="media-body">
+                <h1>Twitter Keyword Scanner</h1>
+                <h4>@mkheck, mark.heckler@gmail.com</h4>
+            </div>
         </div>
     </div>
     <form action="#" th:action="@{/search}" method="post">
