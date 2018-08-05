@@ -45,7 +45,7 @@
                     <label>Replace with: </label>
                     <input type="text" name="replace">
 
-                    <button type="submit" value="Submit" class="btn btn-default btn-md">
+                    <button type="submit" value="Submit" class="btn btn-default btn-md" onclick="showTable()">
                         <span class="glyphicon glyphicon-search"></span> Submit
                     </button>
                 </div>
@@ -54,7 +54,7 @@
     </form>
     <br>
     <div class="container-fluid">
-        <table class="table-striped">
+        <table class="table-striped" id="tweetTable">
             <thead>
                 <tr>
                     <th>Text</th>
