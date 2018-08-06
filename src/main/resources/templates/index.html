@@ -55,12 +55,14 @@
     <br>
     <div class="container-fluid">
         <table class="table-striped" id="tweetTable">
+<!--
             <thead>
                 <tr>
                     <th>Text</th>
                     <th>URI</th>
                 </tr>
             </thead>
+-->
             <tbody>
                 <tr th:each="tweet: ${Tweets}">
                     <td th:text="${tweet.text}"></td>
